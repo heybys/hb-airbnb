@@ -4,5 +4,16 @@
   "useTabs": false,
   "tabWidth": 2,
   "trailingComma": "all",
-  "printWidth": 80
+  "printWidth": 80,
+  "importOrder": [
+    "react",
+    "^@/app/components/(.*)$",
+    "^@/app/pages/(.*)$",
+    "^@/app/apis/(.*)$",
+    "^@/app/hooks/(.*)$",
+    "^@.",
+    "."
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
 }

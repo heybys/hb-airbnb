@@ -1,7 +1,7 @@
 'use client';
 
-import Container from '../Container';
-import Logo from './Logo';
+import Container from '@/app/components/Container';
+import Logo from '@/app/components/navBar/Logo';
 import Search from '@/app/components/navBar/Search';
 import UserMenu from '@/app/components/navBar/UserMenu';
 
