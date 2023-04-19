@@ -1,5 +1,4 @@
 import prismaClient from '@/app/libs/prismadb';
-import { SafeUser } from '@/app/types';
 import { authOptions } from '@/pages/api/auth/[...nextauth]';
 
 import { getServerSession } from 'next-auth/next';
@@ -18,7 +17,7 @@ export default async function getCurrentUser() {
 
     const currentUser = await prismaClient.user.findUnique({
       where: {
-        email: session.user.email,
+        email: session.user.email as string,
       },
     });
 
@@ -31,7 +30,7 @@ export default async function getCurrentUser() {
       createdAt: currentUser.createdAt.toISOString(),
       updatedAt: currentUser.updatedAt.toISOString(),
       emailVerified: currentUser.emailVerified?.toISOString() || null,
-    } as SafeUser;
+    };
   } catch (error: any) {
     return null;
   }
